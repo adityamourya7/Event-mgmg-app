@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 
 <head>
     <meta charset="UTF-8">
@@ -13,389 +13,481 @@
 
 <body>
     <!-- NavBar -->
-    <nav class="bg-black w-full min-h-[75px] py-3 flex flex-col sm:flex-row items-center justify-between px-[5%] gap-4">
-
+    <nav class="bg-black w-full min-h-[75px] py-4 flex items-center justify-between px-[5%] relative z-50">
         <div class="text-white text-2xl font-bold">
             <a href="#">PlanMyEvent</a>
         </div>
 
-        <div class="flex items-center gap-4 w-full ml-[5%]">
+        <button id="menu-btn" class="text-white text-3xl sm:hidden focus:outline-none cursor-pointer"
+            aria-label="Toggle Menu">
+            <i class="ri-menu-line" id="menu-icon"></i>
+        </button>
 
-            <ul class="flex flex-row justify-center gap-[50px] text-lg">
-                <li class="text-white cursor-pointer hover:text-purple-400 text-xl"><a href="#Categories">Categories</a>
-                </li>
-                <li class="text-white hover:text-purple-400 text-xl"><a href="#events">Events</a></li>
-                <li class="whitespace-nowrap text-white hover:text-purple-400 text-xl"><a href="#footer">Contact us</a>
+        <div id="nav-links" class="hidden absolute top-[75px] left-0 w-full bg-black/95 flex-col items-center gap-6 py-6 transition-all duration-300 ease-in-out
+               sm:static sm:flex sm:flex-row sm:w-auto sm:bg-transparent sm:py-0 sm:gap-8 md:gap-12">
+
+            <ul class="flex flex-col items-center gap-6 text-xl text-white 
+                   sm:flex-row sm:gap-8 md:gap-12 lg:gap-[50px]">
+                <li class="hover:text-purple-400 transition-colors"><a href="#Categories">Categories</a></li>
+                <li class="hover:text-purple-400 transition-colors"><a href="#events">Events</a></li>
+                <li class="whitespace-nowrap hover:text-purple-400 transition-colors"><a href="#footer">Contact us</a>
                 </li>
             </ul>
-        </div>
 
-        <div class="flex flex-row gap-2 sm:gap-4 items-center">
-            <p
-                class="text-white whitespace-nowrap text-xs sm:text-sm md:text-xl px-3 py-1.5 hover:bg-white/20 rounded-full cursor-pointer">
-                Browse Events
-            </p>
-            <a href="#create-event">
-                <p
-                    class="text-white whitespace-nowrap text-xs sm:text-sm md:text-xl px-4 py-1.5 rounded-full bg-[#7c3aed] hover:bg-[#6d28d9] cursor-pointer">
+            <div class="flex flex-col items-center gap-4 mt-2 sm:mt-0 sm:flex-row sm:gap-3 md:gap-4">
+                <a href="#events"
+                    class="text-white whitespace-nowrap text-base md:text-lg px-4 py-2 hover:bg-white/10 rounded-full transition-all">
+                    Browse Events
+                </a>
+                <a href="#create-event"
+                    class="text-white whitespace-nowrap text-base md:text-lg px-5 py-2 rounded-full bg-[#7c3aed] hover:bg-[#6d28d9] transition-all font-medium shadow-md">
                     Create Event
-                </p>
-            </a>
-
+                </a>
+            </div>
         </div>
     </nav>
 
     <main>
         <!-- Hero section -->
-        <section class="w-full h-[calc(100dvh-75px)] flex">
+        <section class="w-full min-h-[calc(100vh-75px)] flex flex-col md:flex-row">
             <div
-                class="bg-linear-to-b from-purple-800 via-pink-500 to-violet-800 grow-[2] p-[5%] flex flex-col gap-[5%]">
+                class="bg-gradient-to-b from-purple-800 via-pink-500 to-violet-800 md:grow-[2] p-6 sm:p-10 md:p-[5%] flex flex-col justify-center gap-6 md:gap-[4%] w-full md:w-auto">
+
                 <div class="w-fit rounded-full py-2 px-4 backdrop-blur-md bg-white/20 border border-white/30">
-                    <p class="tracking-[1px] font-bold font-sans text-white">Trusted by 100k+ people</p>
+                    <p class="tracking-[1px] font-bold font-sans text-white text-sm sm:text-base">Trusted by 100k+
+                        people</p>
                 </div>
 
-                <span class="text-5xl text-white font-bold tracking-[3px] font-serif">Every Event,</span>
-                <span class="text-5xl text-white font-bold tracking-[3px] font-serif">Perfectly Managed</span>
+                <h1 class="flex flex-col gap-1">
+                    <span class="text-4xl sm:text-5xl lg:text-6xl text-white font-bold tracking-[1px] font-serif">Every
+                        Event,</span>
+                    <span
+                        class="text-4xl sm:text-5xl lg:text-6xl text-white font-bold tracking-[1px] font-serif">Perfectly
+                        Managed</span>
+                </h1>
 
-                <p class="text-xl text-white/90 tracking-[0.5px]">
-                    from intimate birthday celebrations to grand parties,<br>
-                    conferences, huge expos
+                <p class="text-lg sm:text-xl text-white/90 tracking-[0.5px] max-w-xl">
+                    From intimate birthday celebrations to grand parties, conferences, and massive corporate expos.
                 </p>
-                <div class="border border-white rounded-full flex w-[75%] py-[10px] bg-white/20 gap-[20px]">
-                    <input type="text" placeholder="Search by Name"
-                        class="w-full h-[50px] ml-[5%] text-white text-lg focus: outline-none">
-                    <button
-                        class="px-[5%] bg-[#7c3aed] rounded-full h-[50px] mr-[10px] cursor-pointer text-white">Search</button>
-                </div>
 
-                <div class="flex flex-row gap-[5%]">
-                    <div>
-                        <p class="text-white font-bold text-2xl">22k+ <br><span class="text-white/90 font-light">Events
-                                managed</span></p>
-                    </div>
-
-                    <div class="w-[1px] border-1 border-white/50"></div>
-                    <div>
-                        <p class="text-white font-bold text-2xl">75k+ <br><span class="text-white/90 font-light">Happy
-                                customers</span></p>
-                    </div>
-                    <div class="w-[1px] border-1 border-white/50"></div>
-                    <p class="text-white font-bold text-2xl">6+ <br><span class="text-white/90 font-light">Types of
-                            Events</span></p>
-                </div>
-            </div>
-            </div>
-            <div
-                class="bg-linear-to-b from-purple-800 via-pink-500 to-violet-800 grow-[1.5] flex justify-center items-center">
                 <div
-                    class="bg-white/30 h-[70%] flex flex-col justify-center gap-[7%] items-center w-[85%] rounded-[20px]">
-                    <div
-                        class="animate-bounce bg-white/20 backdrop-blur-md p-5 rounded-[10px] w-[80%] flex justify-around items-center">
-                        <p><i class="ri-diamond-ring-fill text-3xl"></i>Weddings</p>
+                    class="border border-white/40 rounded-full flex items-center w-full lg:w-[85%] p-1.5 bg-white/20 backdrop-blur-sm shadow-lg">
+                    <input type="text" placeholder="Search by Name"
+                        class="w-full h-[45px] pl-5 bg-transparent text-white text-lg placeholder-white/60 focus:outline-none">
+                    <button
+                        class="px-6 bg-[#7c3aed] hover:bg-[#6d28d9] transition-colors rounded-full h-[45px] cursor-pointer text-white font-semibold shadow-md shrink-0">
+                        Search
+                    </button>
+                </div>
+
+                <div class="flex flex-wrap items-center gap-6 pt-4">
+                    <div>
+                        <p class="text-white font-bold text-2xl sm:text-3xl">22k+ <br>
+                            <span class="text-white/80 font-light text-sm sm:text-base tracking-wide uppercase">Events
+                                managed</span>
+                        </p>
                     </div>
-                    <div
-                        class="animate-bounce bg-white/20 backdrop-blur-md p-5 rounded-[10px] w-[80%] flex justify-around items-center">
-                        <p><i class="ri-briefcase-fill text-3xl"></i>Corporate meetings</p>
+                    <div class="hidden sm:block h-10 w-[1px] bg-white/30"></div>
+                    <div>
+                        <p class="text-white font-bold text-2xl sm:text-3xl">75k+ <br>
+                            <span class="text-white/80 font-light text-sm sm:text-base tracking-wide uppercase">Happy
+                                customers</span>
+                        </p>
                     </div>
-                    <div
-                        class="animate-bounce bg-white/20 backdrop-blur-md p-5 rounded-[10px] w-[80%] flex justify-around items-center">
-                        <p><i class="ri-calendar-event-line text-3xl "></i>Expos</p>
-                    </div>
-                    <div
-                        class="animate-bounce bg-white/20 backdrop-blur-md p-5 rounded-[10px] w-[80%] flex justify-around items-center">
-                        <p><i class="ri-cake-2-fill text-3xl"></i>Birthdays</p>
+                    <div class="hidden sm:block h-10 w-[1px] bg-white/30"></div>
+                    <div>
+                        <p class="text-white font-bold text-2xl sm:text-3xl">6+ <br>
+                            <span class="text-white/80 font-light text-sm sm:text-base tracking-wide uppercase">Types of
+                                Events</span>
+                        </p>
                     </div>
                 </div>
             </div>
 
+            <div
+                class="bg-gradient-to-b from-purple-800 via-pink-500 to-violet-800 md:grow-[1.5] flex justify-center items-center p-6 sm:p-10 w-full md:w-auto">
+                <div
+                    class="bg-white/10 border border-white/20 backdrop-blur-md py-10 flex flex-col justify-center gap-4 items-center w-full max-w-md md:w-[85%] rounded-[20px] shadow-2xl">
+
+                    <div
+                        class="transform transition-all duration-300 hover:-translate-y-1 hover:scale-[1.02] bg-white/20 border border-white/20 backdrop-blur-md p-4 rounded-[12px] w-[85%] flex items-center gap-4 text-white text-lg font-medium cursor-pointer shadow-sm hover:bg-white/25">
+                        <i class="ri-diamond-ring-fill text-3xl text-purple-200"></i>
+                        <span>Weddings</span>
+                    </div>
+
+                    <div
+                        class="transform transition-all duration-300 hover:-translate-y-1 hover:scale-[1.02] bg-white/20 border border-white/20 backdrop-blur-md p-4 rounded-[12px] w-[85%] flex items-center gap-4 text-white text-lg font-medium cursor-pointer shadow-sm hover:bg-white/25">
+                        <i class="ri-briefcase-fill text-3xl text-purple-200"></i>
+                        <span>Corporate Meetings</span>
+                    </div>
+
+                    <div
+                        class="transform transition-all duration-300 hover:-translate-y-1 hover:scale-[1.02] bg-white/20 border border-white/20 backdrop-blur-md p-4 rounded-[12px] w-[85%] flex items-center gap-4 text-white text-lg font-medium cursor-pointer shadow-sm hover:bg-white/25">
+                        <i class="ri-calendar-event-line text-3xl text-purple-200"></i>
+                        <span>Expos</span>
+                    </div>
+
+                    <div
+                        class="transform transition-all duration-300 hover:-translate-y-1 hover:scale-[1.02] bg-white/20 border border-white/20 backdrop-blur-md p-4 rounded-[12px] w-[85%] flex items-center gap-4 text-white text-lg font-medium cursor-pointer shadow-sm hover:bg-white/25">
+                        <i class="ri-cake-2-fill text-3xl text-purple-200"></i>
+                        <span>Birthdays</span>
+                    </div>
+
+                </div>
+            </div>
         </section>
 
         <!-- Categories -->
 
-        <section class="bg-white w-full h-full flex flex-col items-center justify-center gap-[40px] pt-[50px]"
+        <section class="bg-white w-full min-h-screen flex flex-col items-center justify-center gap-10 py-16 px-4"
             id="Categories">
-            <div class="flex flex-col items-center gap-[15px]">
-                <p class="text-[#7c3aed] text-xl font-semibold">WHAT WE COVER</p>
-                <p class="text-3xl text-black-500  font-semibold font-serif tracking-[1px]">Every Event, One Platform
-                </p>
-                <p class="font-sans text-xl text-gray-600">Whatever you're planning we have a perfect solution for
-                    every
-                    occasion</p>
-            </div>
-            <div class="grid gap-5 grid-cols-3 grid-rows-2 w-[80w] justify-center items-center">
-                <div
-                    class="border border-gray-300 hover:border-2 hover:border-purple-500  w-[400px] h-[290px] rounded-[20px] justify-self-center p-[20px] flex flex-col">
-                    <img src="./images/cake.png" alt="cake" width="58px" />
-                    <p class="text-xl font-bold font-sans mt-[10px] grow-1">Birthday Parties</p>
-                    <p class="text-gray-600 grow-1">Milestone birthdays, surprise parties, themed celebrations for all
-                        ages.</p>
-                    <p
-                        class="font-mono text-purple-800 tracking-[1px] cursor-pointer font-semibold grow-1 flex items-center gap-1">
-                        Browse Events
-                        <img src="./images/arrow.png" class="w-[10px]" alt="arrow" />
-                    </p>
-                </div>
-                <div
-                    class="border border-gray-300 hover:border-2 hover:border-blue-400 w-[400px] h-[290px] rounded-[20px] justify-self-center p-[20px] flex flex-col">
-                    <img src="./images/mic.png" alt="mic" width="58px" />
-                    <p class="text-xl font-bold font-sans mt-[10px] grow-1">Conference</p>
-                    <p class="text-gray-600 grow-1">Industry gatherings, keynote events, networking summits, and panels.
-                    </p>
-                    <p
-                        class="font-mono text-blue-500 tracking-[1px] cursor-pointer font-semibold grow-1 flex items-center gap-1">
-                        Browse Events
-                        <img src="./images/arrow.png" class="w-[10px]" alt="arrow" />
-                    </p>
-                </div>
-                <div
-                    class="border border-gray-300 hover:border-2 hover:border-green-600 w-[400px] h-[290px] rounded-[20px] justify-self-center p-[20px] flex flex-col">
-                    <img src="./images/seminar.png" alt="seminar" width="58px" />
-                    <p class="text-xl font-bold font-sans mt-[10px] grow-1">Seminars</p>
-                    <p class="text-gray-600 grow-1">Workshops, training sessions, educational programs, and
-                        masterclasses.</p>
-                    <p
-                        class="font-mono text-green-600 tracking-[1px] cursor-pointer font-semibold grow-1 flex items-center gap-1">
-                        Browse Events
-                        <img src="./images/arrow.png" class="w-[10px]" alt="arrow" />
-                    </p>
-                </div>
-                <div
-                    class="border border-gray-300 hover:border-2 hover:border-orange-500 w-[400px] h-[290px] rounded-[20px] justify-self-center p-[20px] flex flex-col">
-                    <img src="./images/museum.png" alt="expo" width="58px" />
-                    <p class="text-xl font-bold font-sans mt-[10px] grow-1">Expos</p>
-                    <p class="text-gray-600 grow-1">Trade shows, exhibitions, public shows, and convention expos.</p>
-                    <p
-                        class="font-mono text-orange-500 tracking-[1px] cursor-pointer font-semibold grow-1 flex items-center gap-1">
-                        Browse Events
-                        <img src="./images/arrow.png" class="w-[10px]" alt="arrow" />
-                    </p>
-                </div>
-                <div
-                    class="border border-gray-300 hover:border-2 hover:border-rose-500 w-[400px] h-[290px] rounded-[20px] justify-self-center p-[20px] flex flex-col">
-                    <img src="./images/ring.png" alt="ring" width="58px"></img>
-                    <p class="text-xl font-bold font-sans mt-[10px] grow-1">Weddings</p>
-                    <p class="text-gray-600 grow-1">Personal celebrations, milestone events, themed weddings, and
-                        festive
-                        gatherings.</p>
-                    <p
-                        class="font-mono text-rose-500 tracking-[1px] cursor-pointer font-semibold grow-1 flex items-center gap-1">
-                        Browse Events
-                        <img src="./images/arrow.png" class="w-[10px]" alt="arrow" />
-                    </p>
-                </div>
-                <div
-                    class="border border-gray-300 hover:border-2 hover:border-cyan-600 w-[400px] h-[290px] rounded-[20px] justify-self-center p-[20px] flex flex-col">
-                    <img src="./images/suitcase.png" alt="suitcase" width="58px" />
 
-                    <p class="text-xl font-bold font-sans mt-[10px] grow-1">Corporate</p>
-                    <p class="text-gray-600 grow-1">Company meetings, award functions, client appreciation events,
-                        and
-                        team
-                        gatherings.</p>
-                    <p
-                        class="font-mono text-blue-800 tracking-[1px] cursor-pointer font-semibold grow-1 flex items-center gap-1">
-                        Browse Events
-                        <img src="./images/arrow.png" class="w-[10px]" alt="arrow" />
-                    </p>
+            <div class="flex flex-col items-center text-center gap-3">
+                <p class="text-[#7c3aed] text-lg sm:text-xl font-bold tracking-wider">WHAT WE COVER</p>
+                <h2 class="text-3xl sm:text-4xl text-gray-900 font-bold font-serif tracking-tight">Every Event, One
+                    Platform</h2>
+                <p class="font-sans text-base sm:text-lg text-gray-600 max-w-xl">Whatever you're planning, we have a
+                    perfect solution for every occasion.</p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 w-full max-w-6xl px-4">
+
+                <div
+                    class="border border-gray-200 hover:border-purple-500 hover:shadow-xl hover:shadow-purple-500/5 transition-all duration-300 w-full min-h-[280px] rounded-[20px] p-6 flex flex-col justify-between group cursor-pointer bg-white">
+                    <div>
+                        <img src="./images/cake.png" alt="cake" class="w-14 h-14 object-contain" />
+                        <h3 class="text-xl font-bold font-sans mt-4 text-gray-800">Birthday Parties</h3>
+                        <p class="text-gray-600 mt-2 text-sm leading-relaxed">Milestone birthdays, surprise parties,
+                            themed celebrations for all ages.</p>
+                    </div>
+                    <div
+                        class="font-mono text-purple-700 tracking-[0.5px] font-semibold flex items-center gap-2 mt-4 group-hover:text-purple-900 transition-colors">
+                        <span>Browse Events</span>
+                        <img src="./images/arrow.png"
+                            class="w-2.5 transform group-hover:translate-x-1 transition-transform" alt="arrow" />
+                    </div>
                 </div>
+
+                <div
+                    class="border border-gray-200 hover:border-blue-400 hover:shadow-xl hover:shadow-blue-500/5 transition-all duration-300 w-full min-h-[280px] rounded-[20px] p-6 flex flex-col justify-between group cursor-pointer bg-white">
+                    <div>
+                        <img src="./images/mic.png" alt="mic" class="w-14 h-14 object-contain" />
+                        <h3 class="text-xl font-bold font-sans mt-4 text-gray-800">Conference</h3>
+                        <p class="text-gray-600 mt-2 text-sm leading-relaxed">Industry gatherings, keynote events,
+                            networking summits, and panels.</p>
+                    </div>
+                    <div
+                        class="font-mono text-blue-500 tracking-[0.5px] font-semibold flex items-center gap-2 mt-4 group-hover:text-blue-700 transition-colors">
+                        <span>Browse Events</span>
+                        <img src="./images/arrow.png"
+                            class="w-2.5 transform group-hover:translate-x-1 transition-transform" alt="arrow" />
+                    </div>
+                </div>
+
+                <div
+                    class="border border-gray-200 hover:border-green-600 hover:shadow-xl hover:shadow-green-500/5 transition-all duration-300 w-full min-h-[280px] rounded-[20px] p-6 flex flex-col justify-between group cursor-pointer bg-white">
+                    <div>
+                        <img src="./images/seminar.png" alt="seminar" class="w-14 h-14 object-contain" />
+                        <h3 class="text-xl font-bold font-sans mt-4 text-gray-800">Seminars</h3>
+                        <p class="text-gray-600 mt-2 text-sm leading-relaxed">Workshops, training sessions, educational
+                            programs, and masterclasses.</p>
+                    </div>
+                    <div
+                        class="font-mono text-green-600 tracking-[0.5px] font-semibold flex items-center gap-2 mt-4 group-hover:text-green-800 transition-colors">
+                        <span>Browse Events</span>
+                        <img src="./images/arrow.png"
+                            class="w-2.5 transform group-hover:translate-x-1 transition-transform" alt="arrow" />
+                    </div>
+                </div>
+
+                <div
+                    class="border border-gray-200 hover:border-orange-500 hover:shadow-xl hover:shadow-orange-500/5 transition-all duration-300 w-full min-h-[280px] rounded-[20px] p-6 flex flex-col justify-between group cursor-pointer bg-white">
+                    <div>
+                        <img src="./images/museum.png" alt="expo" class="w-14 h-14 object-contain" />
+                        <h3 class="text-xl font-bold font-sans mt-4 text-gray-800">Expos</h3>
+                        <p class="text-gray-600 mt-2 text-sm leading-relaxed">Trade shows, exhibitions, public shows,
+                            and convention expos.</p>
+                    </div>
+                    <div
+                        class="font-mono text-orange-500 tracking-[0.5px] font-semibold flex items-center gap-2 mt-4 group-hover:text-orange-700 transition-colors">
+                        <span>Browse Events</span>
+                        <img src="./images/arrow.png"
+                            class="w-2.5 transform group-hover:translate-x-1 transition-transform" alt="arrow" />
+                    </div>
+                </div>
+
+                <div
+                    class="border border-gray-200 hover:border-rose-500 hover:shadow-xl hover:shadow-rose-500/5 transition-all duration-300 w-full min-h-[280px] rounded-[20px] p-6 flex flex-col justify-between group cursor-pointer bg-white">
+                    <div>
+                        <img src="./images/ring.png" alt="ring" class="w-14 h-14 object-contain" />
+                        <h3 class="text-xl font-bold font-sans mt-4 text-gray-800">Weddings</h3>
+                        <p class="text-gray-600 mt-2 text-sm leading-relaxed">Personal celebrations, milestone events,
+                            themed weddings, and festive gatherings.</p>
+                    </div>
+                    <div
+                        class="font-mono text-rose-500 tracking-[0.5px] font-semibold flex items-center gap-2 mt-4 group-hover:text-rose-700 transition-colors">
+                        <span>Browse Events</span>
+                        <img src="./images/arrow.png"
+                            class="w-2.5 transform group-hover:translate-x-1 transition-transform" alt="arrow" />
+                    </div>
+                </div>
+
+                <div
+                    class="border border-gray-200 hover:border-cyan-600 hover:shadow-xl hover:shadow-cyan-500/5 transition-all duration-300 w-full min-h-[280px] rounded-[20px] p-6 flex flex-col justify-between group cursor-pointer bg-white">
+                    <div>
+                        <img src="./images/suitcase.png" alt="suitcase" class="w-14 h-14 object-contain" />
+                        <h3 class="text-xl font-bold font-sans mt-4 text-gray-800">Corporate</h3>
+                        <p class="text-gray-600 mt-2 text-sm leading-relaxed">Company meetings, award functions, client
+                            appreciation events, and team gatherings.</p>
+                    </div>
+                    <div
+                        class="font-mono text-cyan-600 tracking-[0.5px] font-semibold flex items-center gap-2 mt-4 group-hover:text-cyan-800 transition-colors">
+                        <span>Browse Events</span>
+                        <img src="./images/arrow.png"
+                            class="w-2.5 transform group-hover:translate-x-1 transition-transform" alt="arrow" />
+                    </div>
+                </div>
+
             </div>
         </section>
 
         <!-- Events -->
-        <section class="bg-white w-full min-h-screen py-[50px] px-[20px] md:px-[70px] flex flex-col items-center"
-            id="events">
-            <div class="flex flex-col items-center w-full max-w-[1200px] gap-[30px]">
+        <section class="bg-white w-full min-h-screen py-16 px-4 sm:px-6 lg:px-8 flex flex-col items-center" id="events">
+            <div class="w-full max-w-6xl flex flex-col gap-10">
 
-                <div class="flex flex-col gap-[15px] items-center text-center">
-                    <p class="tracking-[1px] text-xl text-[#7c3aed] font-semibold">UPCOMING EVENTS</p>
-                    <p class="text-3xl font-serif font-semibold">Events You Can't Miss</p>
-                    <p class="text-gray-600 text-lg md:text-2xl max-w-[800px]">
+                <div class="flex flex-col gap-3 items-center text-center">
+                    <p class="tracking-wider text-lg sm:text-xl text-[#7c3aed] font-bold">UPCOMING EVENTS</p>
+                    <h2 class="text-3xl sm:text-4xl font-serif font-bold text-gray-900 tracking-tight">Events You Can't
+                        Miss</h2>
+                    <p class="text-gray-600 text-base sm:text-lg max-w-2xl">
                         Discover different events happening around you and around the world
                     </p>
                 </div>
 
-                <div class="flex flex-wrap w-full gap-[10px] md:gap-[15px] justify-start items-center py-2">
+                <div class="flex items-center gap-3 py-2 overflow-x-auto no-scrollbar w-full" id="event-types">
                     <div
-                        class="cursor-pointer w-fit border-2 border-[#7c3aed] bg-[#7c3aed] text-white px-[20px] py-[8px] text-center text-base rounded-full transition-colors duration-200">
+                        class="cursor-pointer shrink-0 border-2 border-[#7c3aed] bg-[#7c3aed] text-white px-5 py-2 text-center text-sm font-medium rounded-full transition-colors duration-200">
                         All
                     </div>
                     <div
-                        class="cursor-pointer w-fit border-2 border-gray-200 text-[#64748b] bg-white px-[20px] py-[8px] text-center text-base hover:bg-[#7c3aed] hover:border-[#7c3aed] hover:text-white rounded-full transition-colors duration-200">
+                        class="cursor-pointer shrink-0 border-2 border-gray-200 text-gray-600 bg-white px-5 py-2 text-center text-sm font-medium hover:bg-[#7c3aed] hover:border-[#7c3aed] hover:text-white rounded-full transition-colors duration-200">
                         Birthday
                     </div>
                     <div
-                        class="cursor-pointer w-fit border-2 border-gray-200 text-[#64748b] bg-white px-[20px] py-[8px] text-center text-base hover:bg-[#7c3aed] hover:border-[#7c3aed] hover:text-white rounded-full transition-colors duration-200">
+                        class="cursor-pointer shrink-0 border-2 border-gray-200 text-gray-600 bg-white px-5 py-2 text-center text-sm font-medium hover:bg-[#7c3aed] hover:border-[#7c3aed] hover:text-white rounded-full transition-colors duration-200">
                         Conference
                     </div>
                     <div
-                        class="cursor-pointer w-fit border-2 border-gray-200 text-[#64748b] bg-white px-[20px] py-[8px] text-center text-base hover:bg-[#7c3aed] hover:border-[#7c3aed] hover:text-white rounded-full transition-colors duration-200">
+                        class="cursor-pointer shrink-0 border-2 border-gray-200 text-gray-600 bg-white px-5 py-2 text-center text-sm font-medium hover:bg-[#7c3aed] hover:border-[#7c3aed] hover:text-white rounded-full transition-colors duration-200">
                         Seminar
                     </div>
                     <div
-                        class="cursor-pointer w-fit border-2 border-gray-200 text-[#64748b] bg-white px-[20px] py-[8px] text-center text-base hover:bg-[#7c3aed] hover:border-[#7c3aed] hover:text-white rounded-full transition-colors duration-200">
+                        class="cursor-pointer shrink-0 border-2 border-gray-200 text-gray-600 bg-white px-5 py-2 text-center text-sm font-medium hover:bg-[#7c3aed] hover:border-[#7c3aed] hover:text-white rounded-full transition-colors duration-200">
                         Expo
                     </div>
                     <div
-                        class="cursor-pointer w-fit border-2 border-gray-200 text-[#64748b] bg-white px-[20px] py-[8px] text-center text-base hover:bg-[#7c3aed] hover:border-[#7c3aed] hover:text-white rounded-full transition-colors duration-200">
+                        class="cursor-pointer shrink-0 border-2 border-gray-200 text-gray-600 bg-white px-5 py-2 text-center text-sm font-medium hover:bg-[#7c3aed] hover:border-[#7c3aed] hover:text-white rounded-full transition-colors duration-200">
                         Parties
                     </div>
                     <div
-                        class="cursor-pointer w-fit border-2 border-gray-200 text-[#64748b] bg-white px-[20px] py-[8px] text-center text-base hover:bg-[#7c3aed] hover:border-[#7c3aed] hover:text-white rounded-full transition-colors duration-200">
+                        class="cursor-pointer shrink-0 border-2 border-gray-200 text-gray-600 bg-white px-5 py-2 text-center text-sm font-medium hover:bg-[#7c3aed] hover:border-[#7c3aed] hover:text-white rounded-full transition-colors duration-200">
                         Corporate
                     </div>
                 </div>
 
-                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 w-full gap-[25px]">
-                    <div class="w-full aspect-[4/5] border-2 border-gray-200 rounded-xl bg-gray-50 flex flex-col">
-                        <div class="w-full h-[40%] rounded-t-lg">
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 w-full">
+
+                    <div
+                        class="w-full border border-gray-200 rounded-2xl bg-white shadow-sm flex flex-col overflow-hidden hover:shadow-md transition-shadow duration-300">
+                        <div class="w-full h-48 overflow-hidden">
                             <img src="https://pohcdn.com/sites/default/files/styles/node__blog_post__bp_banner/public/live_banner/New-Delhi-2.jpg"
-                                class="w-full h-full rounded-t-lg object-cover" />
+                                alt="Delhi Music Festival" class="w-full h-full object-cover" />
                         </div>
-                        <div class="w-full h-[60%] px-[20px] py-[10px] flex flex-col">
-                            <div class="grow">
-                                <p class="text-gray-600 font-semibold">July 17, 26</p>
-                                <p class="text-gray-600 font-semibold">JLN Stadium, New Delhi</p>
+                        <div class="p-5 flex flex-col flex-1 justify-between gap-4">
+                            <div class="space-y-2">
+                                <div class="text-xs font-semibold text-gray-500 flex flex-wrap gap-x-2">
+                                    <span>July 17, 2026</span>
+                                    <span class="text-gray-300">•</span>
+                                    <span>JLN Stadium, New Delhi</span>
+                                </div>
+                                <h3 class="text-xl font-bold text-gray-900 tracking-wide line-clamp-1">Delhi Grand Music
+                                    Festival</h3>
+                                <p class="text-sm text-gray-600 line-clamp-3 leading-relaxed">Hear the melodies that
+                                    define Indian music. Join 40,000+ fans under the open sky for the most anticipated
+                                    musical event of the year.</p>
                             </div>
-                            <p class="grow text-lg font-semibold tracking-[1px]">Delhi Grand Music Festival
-                            </p>
-                            <p class="grow text-gray-600">Hear the melodies that define Indian music. Join
-                                40,000+ fans under the open sky for the most anticipated musical event of the year.</p>
-                            <div class="flex w-full items-center">
-                                <p class="font-bold text-md text-[#7c3aed] grow-[2]">6,500/- </p>
-                                <p class="text-gray-600 grow-[0.5] font-semibold">3,625 seats left</p>
+                            <div class="flex w-full items-center justify-between pt-2 border-t border-gray-100">
+                                <div>
+                                    <p class="font-extrabold text-lg text-[#7c3aed]">₹6,500</p>
+                                    <p class="text-xs font-medium text-gray-500">3,625 seats left</p>
+                                </div>
                                 <button
-                                    class="bg-[#7c3aed] text-white px-[20px] py-[8px] rounded-full cursor-pointer">Register</button>
+                                    class="bg-[#7c3aed] hover:bg-[#6d28d9] text-white px-5 py-2 text-sm font-medium rounded-full cursor-pointer transition-colors">Register</button>
                             </div>
                         </div>
                     </div>
-                    <div class="w-full aspect-[4/5] border-2 border-gray-200 rounded-xl bg-gray-50">
-                        <div class="w-full h-[40%] rounded-t-lg">
+
+                    <div
+                        class="w-full border border-gray-200 rounded-2xl bg-white shadow-sm flex flex-col overflow-hidden hover:shadow-md transition-shadow duration-300">
+                        <div class="w-full h-48 overflow-hidden">
                             <img src="https://assets.site.ingka.com/cdn-cgi/image/width=656,height=506,fit=cover/ingka-old/wp-content/uploads/2024/09/ICNewsroom_Lykli_Noida_Newsroom.jpg"
-                                class="w-full h-full rounded-t-lg object-cover" />
+                                alt="Semiconductor OSAT Expo" class="w-full h-full object-cover" />
                         </div>
-                        <div class="w-full h-[60%] px-[20px] py-[10px] flex flex-col">
-                            <div class="grow">
-                                <p class="text-gray-600 font-semibold">Aug 5, 26</p>
-                                <p class="text-gray-600 font-semibold">Noida, UttarPradesh, Sector-21</p>
+                        <div class="p-5 flex flex-col flex-1 justify-between gap-4">
+                            <div class="space-y-2">
+                                <div class="text-xs font-semibold text-gray-500 flex flex-wrap gap-x-2">
+                                    <span>Aug 5, 2026</span>
+                                    <span class="text-gray-300">•</span>
+                                    <span>Sector-21, Noida, UP</span>
+                                </div>
+                                <h3 class="text-xl font-bold text-gray-900 tracking-wide line-clamp-1">HCL-Foxconn OSAT
+                                    Expo</h3>
+                                <p class="text-sm text-gray-600 line-clamp-3 leading-relaxed">Witness the blueprint of
+                                    India's semiconductor self-reliance at the biggest expo behind UP's semiconductor
+                                    mega-cluster.</p>
                             </div>
-                            <p class="grow text-lg font-semibold tracking-[1px]">HCL-Foxconn Semiconductor OSAT facility
-                                Expo
-                            </p>
-                            <p class="grow text-gray-600">Witness the blueprint of India's semi-conductor self-reliance
-                                at the biggest expo behind UP's semiconductor mega-cluster.</p>
-                            <div class="flex w-full grow items-center">
-                                <p class="text-[#7c3aed] text-md font-bold grow-[2]">Free entry</p>
-                                <p class=" grow-[0.5] font-semibold text-gray-600">2,312 seats left</p>
+                            <div class="flex w-full items-center justify-between pt-2 border-t border-gray-100">
+                                <div>
+                                    <p class="font-extrabold text-lg text-emerald-600">Free entry</p>
+                                    <p class="text-xs font-medium text-gray-500">2,312 seats left</p>
+                                </div>
                                 <button
-                                    class="bg-[#7c3aed] text-white px-[20px] py-[8px] rounded-full cursor-pointer">Register</button>
+                                    class="bg-[#7c3aed] hover:bg-[#6d28d9] text-white px-5 py-2 text-sm font-medium rounded-full cursor-pointer transition-colors">Register</button>
                             </div>
                         </div>
                     </div>
-                    <div class="w-full aspect-[4/5] border-2 border-gray-200 rounded-xl bg-gray-50">
-                        <div class="w-full h-[40%] rounded-t-lg">
+
+                    <div
+                        class="w-full border border-gray-200 rounded-2xl bg-white shadow-sm flex flex-col overflow-hidden hover:shadow-md transition-shadow duration-300">
+                        <div class="w-full h-48 overflow-hidden">
                             <img src="https://www.andbeyond.com/wp-content/uploads/sites/5/Chhatrapati-Shivaji-Terminus-railway-station-mumbai.jpg"
-                                class="w-full h-full rounded-t-lg object-cover" />
+                                alt="Jio Convention Centre" class="w-full h-full object-cover" />
                         </div>
-                        <div class="w-full h-[60%] px-[20px] py-[10px] flex flex-col">
-                            <div class="grow">
-                                <p class="text-gray-600 font-semibold">June 5, 26</p>
-                                <p class="text-gray-600 font-semibold">Mumbai, Maharashtra</p>
+                        <div class="p-5 flex flex-col flex-1 justify-between gap-4">
+                            <div class="space-y-2">
+                                <div class="text-xs font-semibold text-gray-500 flex flex-wrap gap-x-2">
+                                    <span>June 5, 2026</span>
+                                    <span class="text-gray-300">•</span>
+                                    <span>BKC, Mumbai, MH</span>
+                                </div>
+                                <h3 class="text-xl font-bold text-gray-900 tracking-wide line-clamp-1">Jio Centre
+                                    Business Conference</h3>
+                                <p class="text-sm text-gray-600 line-clamp-3 leading-relaxed">Join 3,000+ industry
+                                    pioneers at BKC, Mumbai. Connect with founders and investors shaping the economic
+                                    future of India.</p>
                             </div>
-                            <p class="grow text-lg font-semibold tracking-[1px]">Jio Convention Centre Business
-                                Confernce
-                            </p>
-                            <p class="grow text-gray-600">Join 3,000+ industry pioneers at BKC, Mumbai.
-                                Connect with founders and investors shaping future of India.
-                            </p>
-                            <div class="flex w-full grow items-center">
-                                <p class="font-bold text-md text-[#7c3aed] grow-[2]">6,500/-</p>
-                                <p class="grow-[0.5] text-gray-600 font-semibold">521 seats left</p>
+                            <div class="flex w-full items-center justify-between pt-2 border-t border-gray-100">
+                                <div>
+                                    <p class="font-extrabold text-lg text-[#7c3aed]">₹6,500</p>
+                                    <p class="text-xs font-medium text-gray-500">521 seats left</p>
+                                </div>
                                 <button
-                                    class="bg-[#7c3aed] text-white px-[20px] py-[8px] rounded-full cursor-pointer">Book
-                                    tickets</button>
+                                    class="bg-[#7c3aed] hover:bg-[#6d28d9] text-white px-5 py-2 text-sm font-medium rounded-full cursor-pointer transition-colors">Book
+                                    Tickets</button>
                             </div>
                         </div>
                     </div>
-                    <div class="w-full aspect-[4/5] border-2 border-gray-200 rounded-xl bg-gray-50">
-                        <div class="w-full h-[40%] rounded-t-lg">
+
+                    <div
+                        class="w-full border border-gray-200 rounded-2xl bg-white shadow-sm flex flex-col overflow-hidden hover:shadow-md transition-shadow duration-300">
+                        <div class="w-full h-48 overflow-hidden">
                             <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ6Gv1Wt2bUiTYDo9WrlD2anTScCnwycXaEkdgd0Dqv0b7B1hu4PUCnEgs&s=10"
-                                class="w-full h-full rounded-t-lg object-cover" />
+                                alt="Bengaluru Tech Summit" class="w-full h-full object-cover" />
                         </div>
-                        <div class="w-full h-[60%] px-[20px] py-[10px] flex flex-col">
-                            <div class="grow">
-                                <p class="text-gray-600 font-semibold">Sep 23, 26</p>
-                                <p class="text-gray-600 font-semibold">Bengaluru, Karnataka</p>
+                        <div class="p-5 flex flex-col flex-1 justify-between gap-4">
+                            <div class="space-y-2">
+                                <div class="text-xs font-semibold text-gray-500 flex flex-wrap gap-x-2">
+                                    <span>Sep 23, 2026</span>
+                                    <span class="text-gray-300">•</span>
+                                    <span>Bengaluru, Karnataka</span>
+                                </div>
+                                <h3 class="text-xl font-bold text-gray-900 tracking-wide line-clamp-1">Bengaluru Tech
+                                    Summit</h3>
+                                <p class="text-sm text-gray-600 line-clamp-3 leading-relaxed">Join 50K+ tech leaders at
+                                    Asia's premier innovation summit. Grab your ticket now for full access to AI &
+                                    Deeptech product launches.</p>
                             </div>
-                            <p class="grow text-lg font-semibold tracking-[1px]">Bengaluru Tech & Innovation Summit
-                            </p>
-                            <p class="grow text-gray-600">Join 50K+ tech leaders at Asia's premier
-                                innovation summit. Grab your ticket now for full access to AI & Deeptech product
-                                launches.</p>
-                            <div class="flex w-full grow items-center">
-                                <p class="font-bold text-md text-[#7c3aed] grow-[2]">4,200/-</p>
-                                <p class="text-gray-600 font-semibold grow-[0.5]">722 seats left</p>
+                            <div class="flex w-full items-center justify-between pt-2 border-t border-gray-100">
+                                <div>
+                                    <p class="font-extrabold text-lg text-[#7c3aed]">₹4,200</p>
+                                    <p class="text-xs font-medium text-gray-500">722 seats left</p>
+                                </div>
                                 <button
-                                    class="bg-[#7c3aed] text-white px-[20px] py-[8px] rounded-full cursor-pointer">Book
-                                    tickets</button>
+                                    class="bg-[#7c3aed] hover:bg-[#6d28d9] text-white px-5 py-2 text-sm font-medium rounded-full cursor-pointer transition-colors">Book
+                                    Tickets</button>
                             </div>
                         </div>
                     </div>
-                    <div class="w-full aspect-[4/5] border-2 border-gray-200 rounded-xl bg-gray-50">
-                        <div class="w-full h-[40%] rounded-t-lg">
+
+                    <div
+                        class="w-full border border-gray-200 rounded-2xl bg-white shadow-sm flex flex-col overflow-hidden hover:shadow-md transition-shadow duration-300">
+                        <div class="w-full h-48 overflow-hidden">
                             <img src="https://s7ap1.scene7.com/is/image/incredibleindia/howrah-bridge-howrah-west-bengal-city-1-hero?qlt=82&ts=1742154305591"
-                                class="w-full h-full rounded-t-lg object-cover" />
+                                alt="Kolkata Rooftop Party" class="w-full h-full object-cover" />
                         </div>
-                        <div class="w-full h-[60%] px-[20px] py-[10px] flex flex-col">
-                            <div class="grow">
-                                <p class="text-gray-600 font-semibold">July 17, 26</p>
-                                <p class="text-gray-600 font-semibold">Kolkata, West Bengal</p>
+                        <div class="p-5 flex flex-col flex-1 justify-between gap-4">
+                            <div class="space-y-2">
+                                <div class="text-xs font-semibold text-gray-500 flex flex-wrap gap-x-2">
+                                    <span>July 17, 2026</span>
+                                    <span class="text-gray-300">•</span>
+                                    <span>Park Street, Kolkata</span>
+                                </div>
+                                <h3 class="text-xl font-bold text-gray-900 tracking-wide line-clamp-1">Premium Rooftop
+                                    Luxury Party</h3>
+                                <p class="text-sm text-gray-600 line-clamp-3 leading-relaxed">Experience Kolkata's
+                                    purest weekend club nights in Park Street. Secure your entry pass today for
+                                    exclusive access to premier dance floors.</p>
                             </div>
-                            <p class="grow text-lg font-semibold tracking-[1px]">Premium Rooftop / Luxury Party
-                            </p>
-                            <p class="grow text-gray-600">Experience kolatta's purest weekend club nights
-                                in Park Street. Secure your entry pass today for exclusive access to
-                                premier dance floors.</p>
-                            <div class="flex w-full grow items-center">
-                                <p class="font-bold text-md text-[#7c3aed] grow-[2]">3,200/-</p>
-                                <p class="text-gray-600 font-semibold grow-[0.5]">126 seats left</p>
+                            <div class="flex w-full items-center justify-between pt-2 border-t border-gray-100">
+                                <div>
+                                    <p class="font-extrabold text-lg text-[#7c3aed]">₹3,200</p>
+                                    <p class="text-xs font-medium text-gray-500">126 seats left</p>
+                                </div>
                                 <button
-                                    class="bg-[#7c3aed] text-white px-[20px] py-[8px] rounded-full cursor-pointer">Book
-                                    tickets</button>
+                                    class="bg-[#7c3aed] hover:bg-[#6d28d9] text-white px-5 py-2 text-sm font-medium rounded-full cursor-pointer transition-colors">Book
+                                    Tickets</button>
                             </div>
                         </div>
                     </div>
-                    <div class="w-full aspect-[4/5] border-2 border-gray-200 rounded-xl bg-gray-50">
-                        <div class="w-full h-[40%] rounded-t-lg">
+
+                    <div
+                        class="w-full border border-gray-200 rounded-2xl bg-white shadow-sm flex flex-col overflow-hidden hover:shadow-md transition-shadow duration-300">
+                        <div class="w-full h-48 overflow-hidden">
                             <img src="https://upload.wikimedia.org/wikipedia/commons/3/32/Jamnagar_Refinery.jpg"
-                                class="w-full h-full rounded-t-lg object-cover" />
+                                alt="Jamnagar Infrastructure Expo" class="w-full h-full object-cover" />
                         </div>
-                        <div class="w-full h-[60%] px-[20px] py-[10px] flex flex-col">
-                            <div class="grow">
-                                <p class="text-gray-600 font-semibold">October 17, 26</p>
-                                <p class="text-gray-600 font-semibold">Jamnagar, Gujarat</p>
+                        <div class="p-5 flex flex-col flex-1 justify-between gap-4">
+                            <div class="space-y-2">
+                                <div class="text-xs font-semibold text-gray-500 flex flex-wrap gap-x-2">
+                                    <span>Oct 17, 2026</span>
+                                    <span class="text-gray-300">•</span>
+                                    <span>Jamnagar, Gujarat</span>
+                                </div>
+                                <h3 class="text-xl font-bold text-gray-900 tracking-wide line-clamp-1">Jamnagar
+                                    Infrastructure Expo</h3>
+                                <p class="text-sm text-gray-600 line-clamp-3 leading-relaxed">Connect with the future of
+                                    global energy, green hydrogen, gigafactories, and advanced petrochemical clusters.
+                                </p>
                             </div>
-                            <p class="grow text-lg font-semibold tracking-[1px]">Jamnagar Energy & Mega-Infrastructure
-                                Expo
-                            </p>
-                            <p class="grow text-gray-600">Connect with the future of global energy, green hydrogen,
-                                gigafactories, and advanced
-                                petrochemical clusters.</p>
-                            <div class="flex w-full items-center">
-                                <p class="font-bold text-md text-[#7c3aed] grow-[2]">1,250/-</p>
-                                <p class="text-gray-600 font-semibold grow-[0.5]">211 tickets left</p>
+                            <div class="flex w-full items-center justify-between pt-2 border-t border-gray-100">
+                                <div>
+                                    <p class="font-extrabold text-lg text-[#7c3aed]">₹1,250</p>
+                                    <p class="text-xs font-medium text-gray-500">211 tickets left</p>
+                                </div>
                                 <button
-                                    class="bg-[#7c3aed] text-white px-[20px] py-[8px] rounded-full cursor-pointer">Book
-                                    tickets</button>
+                                    class="bg-[#7c3aed] hover:bg-[#6d28d9] text-white px-5 py-2 text-sm font-medium rounded-full cursor-pointer transition-colors">Book
+                                    Tickets</button>
                             </div>
                         </div>
                     </div>
+
                 </div>
             </div>
         </section>
 
         <!-- Create events -->
         <section id="create-event"
-            class="w-full flex items-center mt-[10px] h-full px-[100px] justify-around py-[50px] bg-blue-50">
+            class="scroll-smooth w-full flex items-center mt-[10px] h-full px-[100px] justify-around py-[50px] bg-blue-50">
             <!-- Panel1 for content -->
             <div class="w-[45%] h-[700px]">
                 <div class="w-full p-[40px] h-[60%] flex flex-col rounded-xl">
@@ -474,62 +566,80 @@
         </section>
     </main>
     <!-- Footer -->
-    <footer id="footer">
+    <footer id="footer" class="w-full">
         <div
-            class="flex flex-col items-center py-[90px] bg-gradient-to-r from-[#320858] to-[#7c3aed] h-[400px] justify-around">
-            <h2 class="text-4xl font-semibold font-serif tracking-[1px] text-white">Your Next Event Starts Here!</h2>
-            <p class="text-lg text-gray-300">Join 75,000+ organizers who create memorable experiences with PlanMyEvent.
+            class="flex flex-col items-center justify-center text-center py-16 px-4 bg-gradient-to-r from-[#320858] to-[#7c3aed] gap-6">
+            <h2 class="text-3xl sm:text-4xl font-bold font-serif tracking-tight text-white">Your Next Event Starts Here!
+            </h2>
+            <p class="text-base sm:text-lg text-purple-100 max-w-xl">
+                Join 75,000+ organizers who create memorable experiences with PlanMyEvent.
             </p>
-            <div class="flex gap-[20px]">
-                <a href="#create-event"><button
-                        class="bg-white text-[#7c3aed] font-bold px-[20px] py-[12px] rounded-full cursor-pointer">Create
-                        Free
-                        Event</button></a>
+            <div class="flex flex-wrap justify-center gap-4 mt-2">
+                <a href="#create-event"
+                    class="inline-block bg-white hover:bg-purple-50 text-[#7c3aed] font-bold px-6 py-3 rounded-full text-sm sm:text-base shadow-lg transition-all active:scale-[0.98]">
+                    Create Free Event
+                </a>
+                <a href="#events"
+                    class="inline-block bg-transparent hover:bg-white/10 text-white border-2 border-white/40 font-semibold px-6 py-3 rounded-full text-sm sm:text-base transition-all active:scale-[0.98]">
+                    Explore Events
+                </a>
+            </div>
+        </div>
 
-                <a href="#events"><button
-                        class="bg-gradient-to-r from-[#320858] to-[#7c3aed] border-2 border-gray-400 text-white px-[20px] py-[12px] rounded-full cursor-pointer">Explore
-                        Events</button></a>
+        <div class="bg-[#0f0a1e] py-16 px-4 sm:px-6 lg:px-8 flex justify-center">
+            <div class="w-full max-w-6xl grid grid-cols-2 md:grid-cols-4 gap-10 text-white">
+
+                <div class="flex flex-col gap-3">
+                    <p class="font-bold tracking-wider text-sm text-purple-400">EVENT TYPES</p>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li><a href="#" class="hover:text-white transition-colors">Birthday Parties</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Conferences</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Seminars</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Expos</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Weddings</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Corporate Events</a></li>
+                    </ul>
+                </div>
+
+                <div class="flex flex-col gap-3">
+                    <p class="font-bold tracking-wider text-sm text-purple-400">PLATFORM</p>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li><a href="#" class="hover:text-white transition-colors">About us</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Pricing</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Features</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Success Stories</a></li>
+                    </ul>
+                </div>
+
+                <div class="flex flex-col gap-3">
+                    <p class="font-bold tracking-wider text-sm text-purple-400">RESOURCES</p>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li><a href="#" class="hover:text-white transition-colors">Help Center</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Blog</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Contact Us</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Developers</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Events Calendar</a></li>
+                    </ul>
+                </div>
+
+                <div class="flex flex-col gap-3">
+                    <p class="font-bold tracking-wider text-sm text-purple-400">LEGAL</p>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li><a href="#" class="hover:text-white transition-colors">Terms of Service</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Privacy Policy</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Cookie Policy</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">GDPR Compliance</a></li>
+                    </ul>
+                </div>
+
             </div>
         </div>
-        <!-- About Us -->
-        <div class="bg-[#0f0a1e] flex justify-center gap-[15%] py-[90px] text-white h-[400px]">
-            <div class="flex flex-col">
-                <p class="font-semibold text-white grow-[3]">EVENT TYPES</p>
-                <p class="text-gray-500 grow">Birthday Parties</p>
-                <p class="text-gray-500 grow">Conferences</p>
-                <p class="text-gray-500 grow">Seminars</p>
-                <p class="text-gray-500 grow">Expos</p>
-                <p class="text-gray-500 grow">Weddings</p>
-                <p class="text-gray-500 grow">Corporate Events</p>
-            </div>
-            <div class="flex flex-col">
-                <p class="font-semibold grow">PLATFORM</p>
-                <p class="text-gray-500 grow">About us</p>
-                <p class="text-gray-500 grow">Pricing</p>
-                <p class="text-gray-500 grow">Features</p>
-                <p class="text-gray-500 grow">Success Stories</p>
-            </div>
-            <div class="flex flex-col">
-                <p class="font-semibold grow">RESOURCES</p>
-                <p class="text-gray-500 grow">Help Center</p>
-                <p class="text-gray-500 grow">Blog</p>
-                <p class="text-gray-500 grow">Contact Us</p>
-                <p class="text-gray-500 grow">Developers</p>
-                <p class="text-gray-500 grow">Events Calendar</p>
-            </div>
-            <div class="flex flex-col">
-                <p class="font-semibold grow">LEGAL</p>
-                <p class="text-gray-500 grow">Terms of Service</p>
-                <p class="text-gray-500 grow">Privacy Policy</p>
-                <p class="text-gray-500 grow">Cookie Policy</p>
-                <p class="text-gray-500 grow">GDPR Compliance</p>
-            </div>
-        </div>
-        <div class="border border-gray-500"></div>
-        <div class="bg-[#0f0a1e] h-[100px] flex items-center justify-center">
-            <p class="text-gray-500">© 2024 PlanMyEvent. All rights reserved.</p>
+
+        <div class="bg-[#0b0716] border-t border-gray-800/60 py-6 px-4 text-center">
+            <p class="text-xs sm:text-sm text-gray-500">© 2026 PlanMyEvent. All rights reserved.</p>
         </div>
     </footer>
+    <script src="script.js"></script>
 </body>
 
 </html>
