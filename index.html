@@ -18,24 +18,19 @@
             <a href="#">PlanMyEvent</a>
         </div>
 
-        <button id="menu-btn" class="md:block lg:hidden text-white text-3xl focus:outline-none cursor-pointer"
+        <button id="menu-btn" class="block lg:hidden text-white text-3xl focus:outline-none cursor-pointer"
             aria-label="Toggle Menu">
             <i class="ri-menu-line" id="menu-icon"></i>
         </button>
 
-        <div id="nav-links" class="hidden sm:hidden md:hidden lg:flex absolute top-[75px] left-0 w-full bg-black/95 flex-col items-center gap-6 py-6 transition-all duration-300 ease-in-out
-        sm:static sm:flex sm:flex-row sm:w-auto sm:bg-transparent sm:py-0 sm:gap-8">
-
-            <ul class="flex flex-col items-center md:grow gap-6 text-xl text-white 
-        sm:flex-row sm:gap-8">
-                <li class="hover:text-purple-400 transition-colors"><a href="#Categories">Categories</a>
-                </li>
+        <div id="nav-links" class="hidden lg:flex lg:flex-row lg:items-center lg:gap-8">
+            <ul class="flex lg:flex-row lg:gap-8 text-xl text-white">
+                <li class="hover:text-purple-400 transition-colors"><a href="#Categories">Categories</a></li>
                 <li class="hover:text-purple-400 transition-colors"><a href="#events">Events</a></li>
-                <li class="whitespace-nowrap hover:text-purple-400 transition-colors"><a href="#footer">Contact us</a>
-                </li>
+                <li class="whitespace-nowrap hover:text-purple-400 transition-colors"><a href="#footer">Contact us</a></li>
             </ul>
 
-            <div class="flex flex-col items-center gap-4 mt-2 sm:mt-0 sm:flex-row sm:gap-3">
+            <div class="flex lg:flex-row lg:items-center lg:gap-3">
                 <a href="#events"
                     class="text-white whitespace-nowrap text-base md:text-lg px-4 py-2 hover:bg-white/10 rounded-full transition-all">
                     Browse Events
@@ -649,6 +644,55 @@
             <p class="text-xs sm:text-sm text-gray-500">© 2026 PlanMyEvent. All rights reserved.</p>
         </div>
     </footer>
+
+    <!-- Mobile Sidebar Menu Overlay -->
+    <div id="sidebar-overlay" class="fixed inset-0 bg-black/60 backdrop-blur-xs z-40 opacity-0 pointer-events-none transition-opacity duration-300"></div>
+
+    <!-- Mobile Sidebar Menu -->
+    <div id="sidebar" class="fixed top-0 right-0 h-full w-[320px] max-w-[85vw] bg-black/95 backdrop-blur-md z-50 translate-x-full transition-transform duration-300 ease-in-out border-l border-white/10 flex flex-col p-6 shadow-2xl">
+        <!-- Close button & logo -->
+        <div class="flex items-center justify-between pb-6 border-b border-white/10">
+            <span class="text-white text-2xl font-bold font-serif bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent">PlanMyEvent</span>
+            <button id="close-btn" class="text-white text-3xl focus:outline-none cursor-pointer hover:text-purple-400 hover:rotate-90 transition-all duration-300" aria-label="Close Menu">
+                <i class="ri-close-line"></i>
+            </button>
+        </div>
+
+        <!-- Navigation Links -->
+        <nav class="flex flex-col gap-8 mt-8 grow justify-between">
+            <ul class="flex flex-col gap-6 text-xl text-white">
+                <li>
+                    <a href="#Categories" class="sidebar-link flex items-center gap-4 hover:text-purple-400 transition-colors py-2 px-3 rounded-lg hover:bg-white/5">
+                        <i class="ri-function-line text-purple-400 text-2xl"></i>
+                        <span>Categories</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#events" class="sidebar-link flex items-center gap-4 hover:text-purple-400 transition-colors py-2 px-3 rounded-lg hover:bg-white/5">
+                        <i class="ri-calendar-event-line text-purple-400 text-2xl"></i>
+                        <span>Events</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#footer" class="sidebar-link flex items-center gap-4 hover:text-purple-400 transition-colors py-2 px-3 rounded-lg hover:bg-white/5">
+                        <i class="ri-mail-line text-purple-400 text-2xl"></i>
+                        <span>Contact us</span>
+                    </a>
+                </li>
+            </ul>
+
+            <!-- Call to Actions -->
+            <div class="flex flex-col gap-4 mt-auto mb-6">
+                <a href="#events" class="sidebar-link text-center text-white text-lg py-3 border border-white/20 hover:bg-white/10 rounded-full transition-all">
+                    Browse Events
+                </a>
+                <a href="#create-event" class="sidebar-link text-center text-white text-lg py-3 rounded-full bg-gradient-to-r from-purple-600 to-pink-500 hover:from-purple-700 hover:to-pink-600 transition-all font-medium shadow-lg active:scale-[0.98]">
+                    Create Event
+                </a>
+            </div>
+        </nav>
+    </div>
+
     <script src="script.js"></script>
 </body>
 
