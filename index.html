@@ -511,18 +511,20 @@
             </div>
             <!-- Panel 2 for form -->
             <div
-                class="md:max-w-[700px] h-full md:min-w-[550px] px-[5%] py-[20px] min-w-[150px] border-2 border-gray-200 shadow-2xl shadow-gray-400 rounded-xl bg-white">
-                <p class="text-2xl font-bold">New Event</p>
-                <form action="#" type="post" class="flex flex-col justify-around h-[550px]">
+                class="w-full max-w-[90%] sm:max-w-[550px] md:max-w-[700px] mx-auto p-5 md:p-6 border-2 border-gray-200 shadow-2xl shadow-gray-400 rounded-xl bg-white">
+                <p class="text-2xl font-bold mb-4">New Event</p>
+                <form action="#" method="POST" class="flex flex-col space-y-4">
+
                     <div class="form-group flex flex-col">
-                        <label for="form-title" class="font-semibold">Event Title *</label>
+                        <label for="form-title" class="font-semibold mb-1">Event Title *</label>
                         <input type="text" id="form-title" placeholder="e.g Annual Tech Conference"
-                            class="border border-gray-300 p-[10px] rounded-md" required />
+                            class="border border-gray-300 p-[10px] rounded-md w-full" required />
                     </div>
-                    <div class="form-group flex justify-between">
-                        <div class="flex flex-col w-[48%]">
-                            <label for="form-category" class="font-semibold">Category *</label>
-                            <select id="form-category" class="border p-[10px] border border-gray-300 rounded-md"
+
+                    <div class="form-group flex flex-col sm:flex-row sm:justify-between gap-4">
+                        <div class="flex flex-col w-full sm:w-[48%]">
+                            <label for="form-category" class="font-semibold mb-1">Category *</label>
+                            <select id="form-category" class="border p-[10px] border-gray-300 rounded-md bg-white"
                                 required>
                                 <option value="birthday">Birthday</option>
                                 <option value="conference">Conference</option>
@@ -532,37 +534,43 @@
                                 <option value="seminar">Seminar</option>
                             </select>
                         </div>
-                        <div class="flex flex-col w-[48%]">
-                            <label for="form-date" class="font-semibold">Event Date *</label>
+                        <div class="flex flex-col w-full sm:w-[48%]">
+                            <label for="form-date" class="font-semibold mb-1">Event Date *</label>
                             <input type="date" id="form-date" class="border border-gray-300 p-[10px] rounded-md"
                                 required />
                         </div>
                     </div>
+
                     <div class="form-group flex flex-col">
-                        <label for="form-location" class="font-semibold">Location *</label>
-                        <input type="text" placeholder="Venue name or city"
+                        <label for="form-location" class="font-semibold mb-1">Location *</label>
+                        <input type="text" id="form-location" placeholder="Venue name or city"
                             class="border border-gray-300 p-[10px] rounded-md" required />
                     </div>
-                    <div class="form-group flex justify-between">
-                        <div class="flex flex-col w-[48%]">
-                            <label for="form-capacity" class="font-semibold">Capacity</label>
-                            <input type="text" placeholder="e.g 200" class="border border-gray-300 rounded-md p-[10px]"
-                                required />
+
+                    <div class="form-group flex flex-col sm:flex-row sm:justify-between gap-4">
+                        <div class="flex flex-col w-full sm:w-[48%]">
+                            <label for="form-capacity" class="font-semibold mb-1">Capacity</label>
+                            <input type="text" id="form-capacity" placeholder="e.g 200"
+                                class="border border-gray-300 rounded-md p-[10px]" required />
                         </div>
-                        <div class="flex flex-col w-[48%]">
-                            <label for="form-price" class="font-semibold">Price</label>
+                        <div class="flex flex-col w-full sm:w-[48%]">
+                            <label for="form-price" class="font-semibold mb-1">Price</label>
                             <input id="form-price" placeholder="0 for free"
                                 class="border border-gray-300 rounded-md p-[10px]" required />
                         </div>
                     </div>
+
                     <div class="form-group flex flex-col">
-                        <label for="form-description" class="font-semibold">Description</label>
+                        <label for="form-description" class="font-semibold mb-1">Description</label>
                         <textarea id="form-description"
-                            class="border h-26 border-gray-300 rounded-md p-[10px]"></textarea>
+                            class="border h-24 border-gray-300 rounded-md p-[10px] resize-none"></textarea>
                     </div>
+
                     <button
-                        class="bg-linear-to-r from-purple-800 via-pink-500 to-violet-800 text-white px-[20px] py-[8px] rounded-full cursor-pointer"
-                        type="submit">Publish Event</button>
+                        class="bg-linear-to-r from-purple-800 via-pink-500 to-violet-800 text-white px-[20px] py-[10px] rounded-full cursor-pointer font-semibold mt-2"
+                        type="submit">
+                        Publish Event
+                    </button>
                 </form>
             </div>
         </section>
