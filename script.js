@@ -45,3 +45,39 @@ document.addEventListener('keydown', (e) => {
         closeSidebar();
     }
 });
+
+// Event Filtering Logic
+document.addEventListener('DOMContentLoaded', () => {
+    const filterButtons = document.querySelectorAll('#event-types [data-filter]');
+    const eventCards = document.querySelectorAll('[data-category]');
+
+    const activeClasses = ['border-[#7c3aed]', 'bg-linear-to-r', 'from-purple-800', 'via-pink-500', 'to-violet-800', 'text-white'];
+    const inactiveClasses = ['border-gray-300', 'text-gray-600', 'bg-white'];
+
+    if (filterButtons.length > 0 && eventCards.length > 0) {
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const filterValue = button.getAttribute('data-filter');
+
+                // Update active/inactive state of filter buttons
+                filterButtons.forEach(btn => {
+                    btn.classList.remove(...activeClasses);
+                    btn.classList.add(...inactiveClasses);
+                });
+
+                button.classList.remove(...inactiveClasses);
+                button.classList.add(...activeClasses);
+
+                // Filter event cards
+                eventCards.forEach(card => {
+                    const category = card.getAttribute('data-category');
+                    if (filterValue === 'all' || category === filterValue) {
+                        card.classList.remove('hidden');
+                    } else {
+                        card.classList.add('hidden');
+                    }
+                });
+            });
+        });
+    }
+});
