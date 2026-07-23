@@ -677,7 +677,7 @@
             <div
                 class="mt-[10%] w-full max-w-[90%] sm:max-w-[550px] md:max-w-[700px] mx-auto p-5 md:p-6 border-2 border-gray-200 shadow-2xl shadow-gray-400 rounded-xl bg-white">
                 <p class="text-2xl font-bold mb-4">New Event</p>
-                <form action="#" method="POST" class="flex flex-col space-y-4">
+                <form class="flex flex-col space-y-4">
 
                     <div class="form-group flex flex-col">
                         <label for="form-title" class="font-semibold mb-1">Event Title *</label>
@@ -716,25 +716,24 @@
                             <label for="form-capacity" class="font-semibold mb-1">Capacity</label>
                             <input type="text" id="form-capacity" placeholder="e.g 200"
                                 class="border border-gray-300 rounded-md p-[10px]" required />
+                            <div class="flex flex-col w-full sm:w-[48%]">
+                                <label for="form-price" class="font-semibold mb-1">Price</label>
+                                <input id="form-price" placeholder="0 for free"
+                                    class="border border-gray-300 rounded-md p-[10px]" required />
+                            </div>
                         </div>
-                        <div class="flex flex-col w-full sm:w-[48%]">
-                            <label for="form-price" class="font-semibold mb-1">Price</label>
-                            <input id="form-price" placeholder="0 for free"
-                                class="border border-gray-300 rounded-md p-[10px]" required />
+
+                        <div class="form-group flex flex-col">
+                            <label for="form-description" class="font-semibold mb-1">Description</label>
+                            <textarea id="form-description"
+                                class="border h-24 border-gray-300 rounded-md p-[10px] resize-none"></textarea>
                         </div>
-                    </div>
 
-                    <div class="form-group flex flex-col">
-                        <label for="form-description" class="font-semibold mb-1">Description</label>
-                        <textarea id="form-description"
-                            class="border h-24 border-gray-300 rounded-md p-[10px] resize-none"></textarea>
-                    </div>
-
-                    <button
-                        class="bg-linear-to-r from-purple-800 via-pink-500 to-violet-800 text-white px-[20px] py-[10px] rounded-full cursor-pointer font-semibold mt-2"
-                        type="submit">
-                        Publish Event
-                    </button>
+                        <button
+                            class="bg-linear-to-r from-purple-800 via-pink-500 to-violet-800 text-white px-[20px] py-[10px] rounded-full cursor-pointer font-semibold mt-2"
+                            type="submit">
+                            Publish Event
+                        </button>
                 </form>
             </div>
         </section>
