@@ -434,7 +434,7 @@
                                 <div class="text-md font-medium text-gray-500 flex flex-wrap gap-x-2">
                                     <span>Dec 2, 2026</span>
                                     <span class="text-gray-300">•</span>
-                                    <span>ABCD Auditorium, Pune, MH</span>
+                                    <span>ABCD Auditorium, Pune</span>
                                 </div>
                                 <h3 class="text-xl font-bold text-gray-900 tracking-wide line-clamp-1">Web,
                                     Cybersecurity Seminar</h3>
@@ -677,12 +677,12 @@
             <div
                 class="mt-[10%] w-full max-w-[90%] sm:max-w-[550px] md:max-w-[700px] mx-auto p-5 md:p-6 border-2 border-gray-200 shadow-2xl shadow-gray-400 rounded-xl bg-white">
                 <p class="text-2xl font-bold mb-4">New Event</p>
-                <form class="flex flex-col space-y-4">
+                <form action="#" method="POST" class="flex flex-col space-y-4">
 
                     <div class="form-group flex flex-col">
                         <label for="form-title" class="font-semibold mb-1">Event Title *</label>
                         <input type="text" id="form-title" placeholder="e.g Annual Tech Conference"
-                            class="border border-gray-300 p-[10px] rounded-md w-full" />
+                            class="border border-gray-300 p-[10px] rounded-md w-full" required />
                     </div>
 
                     <div class="form-group flex flex-col sm:flex-row sm:justify-between gap-4">
@@ -700,39 +700,41 @@
                         </div>
                         <div class="flex flex-col w-full sm:w-[48%]">
                             <label for="form-date" class="font-semibold mb-1">Event Date *</label>
-                            <input type="date" id="form-date" class="border border-gray-300 p-[10px] rounded-md" />
+                            <input type="date" id="form-date" class="border border-gray-300 p-[10px] rounded-md"
+                                required />
                         </div>
                     </div>
 
                     <div class="form-group flex flex-col">
                         <label for="form-location" class="font-semibold mb-1">Location *</label>
                         <input type="text" id="form-location" placeholder="Venue name or city"
-                            class="border border-gray-300 p-[10px] rounded-md" />
+                            class="border border-gray-300 p-[10px] rounded-md" required />
                     </div>
 
                     <div class="form-group flex flex-col sm:flex-row sm:justify-between gap-4">
                         <div class="flex flex-col w-full sm:w-[48%]">
                             <label for="form-capacity" class="font-semibold mb-1">Capacity</label>
                             <input type="text" id="form-capacity" placeholder="e.g 200"
-                                class="border border-gray-300 rounded-md p-[10px]" />
-                            <div class="flex flex-col w-full sm:w-[48%]">
-                                <label for="form-price" class="font-semibold mb-1">Price</label>
-                                <input id="form-price" placeholder="0 for free"
-                                    class="border border-gray-300 rounded-md p-[10px]" />
-                            </div>
+                                class="border border-gray-300 rounded-md p-[10px]" required />
                         </div>
-
-                        <div class="form-group flex flex-col">
-                            <label for="form-description" class="font-semibold mb-1">Description</label>
-                            <textarea id="form-description"
-                                class="border h-24 border-gray-300 rounded-md p-[10px] resize-none"></textarea>
+                        <div class="flex flex-col w-full sm:w-[48%]">
+                            <label for="form-price" class="font-semibold mb-1">Price</label>
+                            <input id="form-price" placeholder="0 for free"
+                                class="border border-gray-300 rounded-md p-[10px]" required />
                         </div>
+                    </div>
 
-                        <button
-                            class="bg-linear-to-r from-purple-800 via-pink-500 to-violet-800 text-white px-[20px] py-[10px] rounded-full cursor-pointer font-semibold mt-2"
-                            type="submit">
-                            Publish Event
-                        </button>
+                    <div class="form-group flex flex-col">
+                        <label for="form-description" class="font-semibold mb-1">Description</label>
+                        <textarea id="form-description"
+                            class="border h-24 border-gray-300 rounded-md p-[10px] resize-none"></textarea>
+                    </div>
+
+                    <button
+                        class="bg-linear-to-r from-purple-800 via-pink-500 to-violet-800 text-white px-[20px] py-[10px] rounded-full cursor-pointer font-semibold mt-2"
+                        type="submit">
+                        Publish Event
+                    </button>
                 </form>
             </div>
         </section>
